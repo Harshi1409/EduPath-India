@@ -43,6 +43,7 @@ EduPath-India/
 
 ## 📋 Dashboard Pages
 | Page | What It Shows |
+|------|---------------|
 | 🏠 Home | Overview of India's engineering education |
 | 📊 JEE Analysis | Hardest institutes, branches, category advantage |
 | 📈 Cutoff Trends | Year-wise, category-wise, round-wise analysis |
