@@ -1,73 +1,44 @@
-# EduPath India 🎓
-### JEE & Private College Analytics Dashboard
+# EduPath India — Engineering College Analytics Dashboard
 
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
-![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
+An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE counselling (JoSAA) cutoffs and NIRF-based data on private engineering colleges, to help students compare institutes, branches and categories.
 
+## Dashboard Pages
 
-## 📌 Problem Statement
-Every year 13+ lakh students appear for JEE but struggle to understand cutoff trends, category advantages, and college comparisons. This dashboard provides data-driven insights to help students make informed decisions.
-
-
-## 🛠️ Tools & Technologies
-| Tool | Purpose |
-|------|---------|
-| Python (Pandas, NumPy) | Data collection & cleaning |
-| MySQL | Database design & SQL analysis |
-| Power BI | Interactive dashboard & DAX |
-
-
-## 📊 Dataset
-| Dataset | Source | Rows |
-|---------|--------|------|
-| JoSAA JEE Cutoff (2018–2025) | Kaggle | 4,32,524 |
-| Private Colleges | Kaggle (NIRF) | 732 |
-
-
-## 📁 Project Structure
-
-EduPath-India/
-├── notebooks/
-│ └── 01_data_cleaning.ipynb
-├── sql/
-│ └── analysis_queries.sql
-├── screenshots/
-│ ├── home.png
-│ ├── jee_analysis.png
-│ ├── cutoff_trends.png
-│ ├── private_colleges.png
-│ └── comparator.png
-└── README.md
-
-
-## 📋 Dashboard Pages
-| Page | What It Shows |
+| Page | What it shows |
 |------|---------------|
-| 🏠 Home | Overview of India's engineering education |
-| 📊 JEE Analysis | Hardest institutes, branches, category advantage |
-| 📈 Cutoff Trends | Year-wise, category-wise, round-wise analysis |
-| 🏫 Private Colleges | Fees vs placement, state insights, ROI |
-| ⚖️ Comparator | Side-by-side institute comparison |
+| Home | Key totals: 154 institutes, 188 B.Tech programs, 362 private colleges |
+| JEE Analysis | Hardest institutes and branches, IIT vs NIT gap, seat availability trend |
+| Cutoff Trends | Year-wise, round-wise and category-wise closing ranks, with slicers for branch, category and institute type |
+| Private Colleges | Top colleges by placement score, fees vs placement, state-wise distribution |
+| Comparator | Side-by-side comparison of any two institutes (OPEN category, CSE) |
 
+## Screenshots
 
-## 🔍 Key Insights
-- 🔵 **AI & ML** branch is now harder than CSE to get into
-- 🟢 **ST category** has **12x rank advantage** over General
-- 🟠 **IIT-NIT gap widened** significantly after 2022
-- 🔴 **Telangana** leads with most private engineering colleges
-- 🟣 **High fees ≠ better placement** in private colleges
+![Home](1-home.png)
+![JEE Analysis](2-jee-analysis.png)
+![Cutoff Trends](3-cutoff-trends.png)
+![Private Colleges](4-private-colleges.png)
+![Comparator](5-comparator.png)
 
+## Key Insights
 
-## 💾 SQL Highlights
-- 10 advanced queries including **CTEs, Window Functions**
-- **CASE WHEN** for institute type classification
-- **RANK() OVER PARTITION BY** for state-wise ranking
-- **CREATE VIEW** for Power BI integration
+- AI & Data Analytics is the hardest B.Tech branch to get into (average closing rank near 0.3K).
+- IIT Bombay's average closing rank is about 12x lower than the NIT average; the IIT–NIT gap stayed wide across 2018–2025.
+- OPEN-category closing ranks are over 10x higher than ST.
+- Total B.Tech seats dipped in 2021, then recovered to a peak in 2025.
+- Among private colleges, higher fees do not guarantee better placement scores.
 
+## Data Preparation
 
-## 👩‍💻 Author
-**Harshita Bansal**
-- 📧 harshitabansal1409@gmail.com
-- 🔗 [LinkedIn](https://linkedin.com/in/harshita-bansal-084286321)
-- 🐙 [GitHub](https://github.com/Harshi1409)
+- Analysis limited to B.Tech programs (370K+ cutoff records).
+- Removed non-engineering institutes and colleges with missing placement data from the private college set (362 colleges remain).
+- Comparator uses the 4-year Computer Science and Engineering program, OPEN seat type.
+
+## Tools
+
+Power BI, DAX, Power Query
+
+## Files
+
+- `edupath_final.pbix` — the Power BI report
+- `EduPath_India_Dashboard.pdf` — PDF export of all pages
