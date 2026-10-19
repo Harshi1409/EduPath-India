@@ -36,7 +36,7 @@ An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE cou
 
 ## Tools
 
-Power BI, DAX, Power Query
+Python, MySQL, Power BI, DAX, Power Query
 
 ## Files
 
