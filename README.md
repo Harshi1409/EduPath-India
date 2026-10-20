@@ -1,6 +1,6 @@
 # EduPath India — Engineering College Analytics Dashboard
 
-An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE counselling (JoSAA) cutoffs and private engineering college data, to help students compare institutes, branches and categories.
+An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE counselling (JoSAA) cutoffs, together with private engineering college data and NIRF 2025 rankings, to help students compare institutes, branches and categories.
 
 ## Dashboard Pages
 
@@ -9,7 +9,7 @@ An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE cou
 | Home | Key totals: 154 institutes, 188 B.Tech programs, 362 private colleges |
 | JEE Analysis | Hardest institutes and branches, IIT vs NIT gap, seat availability trend |
 | Cutoff Trends | Year-wise, round-wise and category-wise closing ranks, with slicers for branch, category and institute type |
-| Private Colleges | Top colleges by placement score, fees vs placement, state-wise distribution |
+| Private Colleges | Top colleges by placement score, fees vs placement, state-wise distribution, NIRF 2025 scores of matched private colleges |
 | Comparator | Side-by-side comparison of any two institutes (OPEN category, CSE) |
 
 ## Screenshots
@@ -27,18 +27,20 @@ An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE cou
 - OPEN-category closing ranks are over 10x higher than ST.
 - Total B.Tech seats dipped in 2021, then recovered to a peak in 2025.
 - Among private colleges, higher fees do not guarantee better placement scores.
+- Of the private colleges matched to the NIRF 2025 Engineering top 100, VIT has the highest NIRF score (rank 16).
 
 ## Data Preparation
 
 - JEE data: JoSAA opening and closing ranks for 2018–2025, merged from yearly files into one dataset (about 4.3 lakh rows).
-- Private colleges data: public Kaggle dataset of Indian engineering colleges with fees, overall rating and category scores (academic, faculty, infrastructure,      placement and so on). The placement score is a rating out of 10, not a placement percentage or salary.
+- Private colleges data: public Kaggle dataset of Indian engineering colleges with fees, overall rating and category scores (academic, faculty, infrastructure, placement and so on). The placement score is a rating out of 10, not a placement percentage or salary.
+- NIRF data: NIRF 2025 Engineering ranking (top 100) from nirfindia.org. Only 10 private colleges could be matched by name to the colleges dataset, so the NIRF chart covers those 10 (`nirf_private_matches.csv`).
 - Analysis limited to B.Tech programs (370K+ cutoff records).
 - Removed non-engineering institutes and colleges with missing placement data from the private college set (362 colleges remain).
 - Comparator uses the 4-year Computer Science and Engineering program, OPEN seat type.
 
 ## Tools
 
-Power BI, DAX, Power Query, Python, MySQL
+Power BI, DAX, Power Query, Python, SQL
 
 ## Files
 
@@ -46,6 +48,7 @@ Power BI, DAX, Power Query, Python, MySQL
 - `EduPath_India_Dashboard.pdf` — PDF export of all pages
 - `01_data_cleaning.ipynb` — Python notebook for data cleaning and preparation
 - `analysis_queries.sql` — SQL queries used for analysis
+- `nirf_private_matches.csv` — NIRF 2025 ranks matched to private colleges in the dataset
 
 ## How to View
 
