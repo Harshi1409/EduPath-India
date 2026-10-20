@@ -1,6 +1,6 @@
 # EduPath India — Engineering College Analytics Dashboard
 
-An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE counselling (JoSAA) cutoffs and NIRF-based data on private engineering colleges, to help students compare institutes, branches and categories.
+An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE counselling (JoSAA) cutoffs and private engineering college data, to help students compare institutes, branches and categories.
 
 ## Dashboard Pages
 
@@ -30,15 +30,28 @@ An interactive Power BI dashboard that analyses 8 years (2018–2025) of JEE cou
 
 ## Data Preparation
 
+- JEE data: JoSAA opening and closing ranks for 2018–2025, merged from yearly files into one dataset (about 4.3 lakh rows).
+- Private colleges data: public Kaggle dataset of Indian engineering colleges with fees, overall rating and category scores (academic, faculty, infrastructure,      placement and so on). The placement score is a rating out of 10, not a placement percentage or salary.
 - Analysis limited to B.Tech programs (370K+ cutoff records).
 - Removed non-engineering institutes and colleges with missing placement data from the private college set (362 colleges remain).
 - Comparator uses the 4-year Computer Science and Engineering program, OPEN seat type.
 
 ## Tools
 
-Python, MySQL, Power BI, DAX, Power Query
+Power BI, DAX, Power Query, Python, MySQL
 
 ## Files
 
 - `edupath_final.pbix` — the Power BI report
 - `EduPath_India_Dashboard.pdf` — PDF export of all pages
+- `01_data_cleaning.ipynb` — Python notebook for data cleaning and preparation
+- `analysis_queries.sql` — SQL queries used for analysis
+
+## How to View
+
+Download `edupath_final.pbix` and open it in Power BI Desktop (free for Windows), or see the PDF export and screenshots above.
+
+## Author
+
+Harshita Bansal — B.Tech CSE, Lovely Professional University
+LinkedIn: https://www.linkedin.com/in/harshita-bansal-084286321/?isSelfProfile=true
